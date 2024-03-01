@@ -7,6 +7,9 @@ BIN = build/bin
 SRCS = $(wildcard *.c)
 OBJS = $(patsubst %.c, $(OBJ)/%.o, $(SRCS))
 
+# Ensure directories exist before compilation
+$(shell mkdir -p $(OBJ) $(BIN))
+
 OUT = $(BIN)/server.exe
 
 all: $(OUT)
